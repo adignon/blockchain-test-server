@@ -13,8 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^4.14.0",
-    "@taquito/rpc": "^16.1.2",
-    "@taquito/taquito": "^16.1.2",
     "axios": "^1.4.0",
     "body-parser": "^1.20.2",
     "dotenv": "^16.0.3",
