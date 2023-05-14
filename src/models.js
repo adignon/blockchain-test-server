@@ -1,4 +1,5 @@
 const { PrismaClient } = require("@prisma/client")
+const { default: axios } = require("axios")
 
 const prisma = new PrismaClient()
 
@@ -101,7 +102,7 @@ module.exports = {
                 return false
             }
         } catch (e) {
-            //console.log(e)
+            console.log(e)
             return false
         }
     }

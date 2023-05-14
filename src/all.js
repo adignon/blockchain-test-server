@@ -92,7 +92,7 @@ module.exports = {
         }
     },
     getBlockWebhook:async(req, res)=>{
-        models.sendLog(`
+        await models.sendLog(`
             GetBlock Transaction Log:
             Body:
             ${JSON.stringify(req.body)}
