@@ -1,5 +1,6 @@
 const TronWeb = require("tronweb")
 const { saveAdress, saveTransaction } = require("../models")
+const { NETWORKS } = require("../config")
 
 const tronWeb = new TronWeb({
     fullHost: "https://trx.getblock.io/mainnet/",
@@ -13,7 +14,7 @@ module.exports = {
             const adressData = await tronWeb.createAccount()
 
             const data = await saveAdress({
-                network: "TRX",
+                network: NETWORKS.TRON,
                 adress: adressData.address.base58,
                 pivate: adressData.privateKey,
                 public: adressData.publicKey
@@ -59,7 +60,7 @@ module.exports = {
             const transaction = await saveTransaction({
                 from:mnemonicData ? mnemonicData.address : tronWeb.address.fromPrivateKey(privateKey),
                 to: data.to,
-                network: "TRX",
+                network: NETWORKS.TRON,
                 amount:  data.amount.toString(),
                 status: "",
                 data:transactionDetails

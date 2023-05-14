@@ -2,6 +2,7 @@ const {Sotez,cryptoUtils} = require("sotez")
 const crypto = require("crypto");
 
 const { saveAdress, saveTransaction } = require("../models");
+const { NETWORKS } = require("../config");
 
 const tezos = new Sotez('https://nd-106-329-480.p2pify.com/1d4fab10de30c4cc9f2bae763a90d2e7');
 
@@ -20,7 +21,7 @@ module.exports = {
             const adress=await saveAdress({
                 passphraseHash: mnemonic,
                 passphrase,
-                network:"TEZOS",
+                network:NETWORKS.TEZOS,
                 adress: keys.pkh,
                 pivate: sk_encrypted,
                 public: keys.pk
